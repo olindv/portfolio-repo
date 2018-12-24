@@ -3,9 +3,8 @@
     position: relative;
   }
   .info_header{
-    background: svg-load('stars1.svg', opacity='1') center center no-repeat;
-    // background: url('/assets/images/icons/sprite.svg#stars1') center center no-repeat;
-    background-size: 30%;
+    background: svg-load('stars1.svg', opacity='0.1', stroke='#fff', fill="transparent") center center no-repeat;
+    background-size: 25%;
     position: absolute;
     top: 0;
     right: 0;

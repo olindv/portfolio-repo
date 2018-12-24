@@ -7,17 +7,17 @@
 //**
 
 .section__text--background{
-    background: svg-load('stars2.svg', fill='#fff', opacity='0.1') center center no-repeat;
+    background: svg-load('stars2.svg', opacity='0.1', stroke='#fff', fill="transparent") center center no-repeat;
     background-color: rgba(#0c0f1e, 0.85);
+    background-size: 10%;
     padding: 65px 0 35px;
     flex-basis: 100%;
-
 }
   
 .section-about{
     padding-bottom: 330px;
     .section__text{
-        background: svg-load('stars3.svg', fill='#fff', opacity='0.1') center center no-repeat;
+        background: svg-load('stars3.svg', opacity='0.1', stroke='#fff', fill="transparent") center center no-repeat;
         padding: 65px 0 30px;
     }
     .section__title{

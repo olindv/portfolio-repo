@@ -29,7 +29,7 @@
     width: 40%;
     display: flex;
     justify-content: center;
-    background: svg-load('stars3.svg', fill='#000', opacity='0.1') 50% 0 no-repeat;
+    background: svg-load('stars3.svg', opacity='0.5', stroke='#083c96', fill="transparent") 50% 0 no-repeat;
 }
 .about__left-content{
     width: 60%;
