@@ -6,7 +6,7 @@ body {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.42;
-  color: $text-color;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,12 +19,18 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 95%;
+  // width: 95%;
+  max-width: 1180px;
+  position: relative;
 }
 
 button {
-  border: 0;
+  // border: 0;
   cursor: pointer;
+  padding: 0;
+  background-color: initial;
+  outline: none;
+  border: none;
 }
 
 * {
@@ -45,4 +51,42 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0;
+}
+
+svg{
+  display: block;
+}
+
+a{
+  text-decoration: none;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.block-scroll{
+  overflow: hidden;
+}
+
+.img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+
+.img-circle{
+  border-radius: 50%;
+}
+.img-objf{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }

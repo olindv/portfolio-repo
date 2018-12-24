@@ -1,6 +1,54 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('portfolio_header', 'hello-world__block')
-    .inlined-svg
+    .wrap(style="background:url('./assets/images/pic/bg-welcome.png') center center / cover no-repeat")
+        .container.container-auth
+            .wrapper-auth
+                .auth
+                    .auth-front.auth__face
+                        .info.info_auth
+                            .info__photo
+                                +image('pic/IMG_1844.jpg', 'photo', 'img img-circle')
+                            .info__text
+                                h1.info__title Дмитрий Олин
+                                h2.info__desc Личный сайт веб разработчика
+                            - var icons = ["vk", "github", "in"]
+                            - var iconsHref = ["https://vk.com/id222946", "https://github.com/olindv", "#"]
+                            +listIcons('icons', icons, iconsHref)
+                        - var items = ["Мои работы", "Обо мне", "Блог"]
+                        - var itemsHref = ["works.html", "about.html", "blog.html"]
+                        +menu('menu', items, itemsHref)
+                    .auth-back.auth__face
+                        .auth-back__info
+                            .section__text
+                                h2.section__title.section__title--underline Авторизуйтесь
+                            .auth-back__form
+                                form.form(action="")
+                                    .form__row
+                                        .form__input-icon
+                                            +icon('login', 'login-icon')
+                                        input(type="text", placeholder="Логин").form__input
+                                    .form__row
+                                        .form__input-icon
+                                            +icon('password', 'password-icon')
+                                        input(type="text", placeholder="Пароль").form__input
+                                    label.form__label.form__label_checkbox
+                                        input(type="checkbox").form__checkbox
+                                        .form__checkbox-fake
+                                        span.form__checkbox-text Я человек
+                                    .form__question Вы точно не робот?
+                                    .form__answer
+                                        label.form__label.form__label_first
+                                            input(type="radio", name="robot").form__radio
+                                            .form__radio-fake
+                                            span.form__radio-text Да
+                                        label.form__label.form__label_first
+                                            input(type="radio", name="robot").form__radio
+                                            .form__radio-fake
+                                            span.form__radio-text Не уверен
+                        - items = ["На главную", "Войти"]
+                        - itemsHref = ["#", "#"]
+                        +menu('menu', items, itemsHref)
+            .wrapper-button
+                button.button.button__auth Авторизоваться
+            h2.footer__title.footer__title_auth &copy; Дмитрий Олин | создано с любовью в LoftSchool | 2018

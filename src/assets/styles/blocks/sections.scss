@@ -1,0 +1,44 @@
+.section__text{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section{
+  .section__title{
+    font-size: 63px;
+    &:after{
+      background-color: $text-color;
+    }
+  }
+}
+
+.section__title{
+  font-family: 'sansus', Helvetica, sans-serif;
+  font-size: 34px;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+  padding-bottom: 25px;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 90px;
+    height: 3px;
+    background-color: #fff;
+  }
+}
+
+.section__title--underline {
+  &::after{
+    height: 0;
+    width: 0;
+  }
+}

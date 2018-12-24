@@ -1,2 +1,19 @@
+block footer
+
 footer.footer
-  h2 Copyright &copy;
+  .footer__main
+    .footer__column
+      .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+    .footer__column
+      - var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+      - var itemsHref = ["works.html", "about.html", "blog.html", "index.html"]
+      +menu('menu-footer', items, itemsHref)
+      - var icons = ["vk","github","in"]
+      - var iconsHref = ["https://vk.com/id222946", "https://github.com/olindv", "#"]
+      +listIcons('icons', icons, iconsHref)
+    .footer__column
+      .footer__text Skype: navras88
+      .footer__text Mail: navras88@mail.ru
+      .footer__text Phone: +7 926 949 86 82
+      .footer__text Adress: Moscow
+  h2.footer__title &copy; Дмитрий Олин | создано с любовью в LoftSchool | 2018

@@ -7,15 +7,18 @@ html(lang="ru")
     meta(charset="utf-8")
     meta(content="ie=edge" http-equiv="x-ua-compatible")
     meta(content="width=device-width, initial-scale=1" name="viewport")
-    
+
     title Portfolio | #{title}
     link(rel='stylesheet' href='main.min.css')
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b828d17e-e947-46ca-a671-edef4f2a975f&lang=ru_RU" type="text/javascript"></script>
   body
     .wrapper
       .maincontent
+        include ./common/header.pug
         block content
 
       include ./common/footer.pug
+
 
     script(src='bootloader.bundle.js')
     script(src='vendor.bundle.js')

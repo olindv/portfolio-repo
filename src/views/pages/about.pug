@@ -1,5 +1,10 @@
 extends ../main.layout.pug
 
+block arrow-down
+  .header__down.header__down--display-none
+    a(href="#").header__down-link
+      +icon('arrow_down','arrow_down-icon')
+
 block variables
   - var title = 'Обо мне'
 
@@ -7,4 +12,64 @@ block scripts
   script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+  section.stuff
+    .stuff__triangles
+        svg(fill="#efeee9", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+            polygon(points="0,0 0,150 900,150")
+        svg(fill="#eeebdf", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+            polygon(points="0,150 900,150 900,0")
+  section.about
+    .about__left
+      .about__left-title
+        .block-title Обо мне
+      .about__left-content
+        .user-description
+          .user-description__image
+            +image('pic/IMG_1844.jpg', 'MyPhoto', 'user-description__avatar')
+          .user-description__data
+            .user-description__title
+              h2.section__title.section__title--font-color Кто я
+            .user-description__text.text-content
+              p.text-content__desc Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p.text-content__desc Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+    .about__right
+      .about__right-title
+        h2.section__title.section__title--font-color Чем я могу быть вам полезен
+      .about__right-description.text-content
+        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+      .about__right-content
+        -
+          var skills = [
+            ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
+            ['Backend', [['PHP', 30], ['mySQL', 50], ['Node.js & npm', 70], ['Mongo.db', 20]]],
+            ['WorkFlow', [['Git', 50], ['Gulp', 40], ['Bower', 30]]],
+          ]
+        ul.skills-list
+          each skillsrow in skills
+            li.skills-list__item.skills-row
+              .skills-row__title #{skillsrow[0]}
+              ul.skills-row__list
+                each skill in skillsrow[1]
+                  li.skills-row__item
+                    figure.skill(data-percents="80")
+                      svg.skill__figure
+                        circle(cx="55" cy="55" r="45").skill__circle.skill__circle_under
+                        circle(cx="55" cy="55" r="45").skill__circle.skill__circle_above
+                      .skill__title #{skill[0]}
+  section.map#map
+    .contacts
+      h2.section__title.section__title--font-color Контакты 
+      adress.contacts__info 
+        ul.contacts__list
+          - 
+            var contacts = [
+              ['skype_n1', 'navras88'],
+              ['phone_n', '+7 926 949 86 82'],
+              ['envelope_n', 'navras88@mail.ru'],
+              ['map_n', 'Москва, Зеленоград']
+            ]
+          each item in contacts
+            li.contacts__elem
+              .contacts__icon
+                +icon(`${item[0]}`, 'contacts__icon-img')
+              .contacts__text #{item[1]}

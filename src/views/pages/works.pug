@@ -1,0 +1,87 @@
+extends ../main.layout.pug
+
+block arrow-down
+  .header__down.header__down--position-bottom
+    a(href="#").header__down-link
+      +icon('arrow_down','arrow_down-icon')
+
+block variables
+  - var title = 'Мои работы'
+
+  
+
+block scripts
+  script(src='works.bundle.js')
+
+block content
+  section.stuff
+    .stuff__triangles.stuff__triangles--margin
+      svg(fill="#0c0f1e", opacity='0.85', viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+          polygon(points="0,0 0,150 900,150")
+      svg(fill="#0c0f1e", opacity='0.85', viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+          polygon(points="0,150 900,150 900,0")
+      .section__text.section__text--background
+        h2.section__title.section__title--underline Мои работы
+  section.section.section-works
+    //- .section__text.section__text--background
+    //-   h2.section__title.section__title--underline Мои работы
+    .slider
+      a(href="#").slider__prev
+        span.slider__prev-icon
+          +image('slides/slide2.png', 'Работа_2', 'img')
+        +icon('portf_arrow_down','portf_arrow_down-icon')
+      a(href="#").slider__next
+        span.slider__next-icon
+          +image('slides/slide3.png', 'Работа_3', 'img')
+        +icon('portf_arrow_up', 'portf_arrow_up-icon')
+      ul.slider__list
+        li.slider__item
+          .slider__column.slider__left
+            .slider__info
+              .slider__text
+                h2.section__title Сайт школы онлайн образования
+              .slider__technologies HTML, CSS, JavaScript
+              a(href="https://loftschool.com", target="_blank").button.button_slider
+                span.slider__info-icon
+                  +icon('link','link-icon')
+                span.slider__info-text Посмотреть сайт
+          .slider__column.slider__right
+            .slider__pic
+              +image('slides/slide1.png', 'Работа_1', 'img')
+  section(style="background: url('./assets/images/bg.png') center bottom / cover no-repeat").section.section-about
+    .container.container-about
+      .section__text
+        h2.section__title.section__title--underline Что обо мне говорят
+      .posts
+        ul.posts__list
+          - var alts = ['Ковальчук Дмитрий', 'Сабанцев Владимир'];
+          - var adresses = ['posts/DK.png', 'posts/VS.png'];
+          - var texts = ['Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!', 'Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!']
+          - var functions = ['— основатель Loftschool', '— преподаватель']
+          - for(var i=0; i<2; i++)
+            li.posts__item
+                .posts__icon
+                    +image(`${adresses[i]}`, `${alts[i]}`, 'img img-circle img-objf')
+                .posts__text=texts[i]
+                .posts__author
+                    .posts__author-name=alts[i]
+                    .posts__author-function=functions[i]
+                .posts__img
+      .section-about__form         
+        .form-wrapper
+          form.form
+            .form__text
+              h2.section__title Связаться со мной
+            .form__row
+              input(type="text", placeholder="Имя").form__input
+            .form__row
+              input(type="text", placeholder="Email").form__input
+            textarea(name="", rows="7", placeholder="Ваше сообщение").form__textarea
+          - items = ["Отправить", "Очистить"]
+          - itemsHref = ["#", "#"]
+          +menu('menu', items, itemsHref)
+      .arrow__up
+        a(href="#").arrow__up-link
+          +icon('portf_arrow_up','arrow__up-icon')
+
+

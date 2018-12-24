@@ -1,0 +1,23 @@
+header(style="background: url('./assets/images/pic/bg-welcome.png') center center / cover no-repeat").header
+  .info.info_header
+    .info__photo
+      +image('pic/IMG_1844.jpg', 'Photo', 'img img-circle')
+    .info__text
+      h1.info__title Дмитрий Олин
+      h2.info__desc Личный сайт веб разработчика
+  .header__icons
+    - var icons = ["vk","github","in"]
+    - var iconsHref = ["https://vk.com/id222946", "https://github.com/olindv", "#"]
+    +listIcons('icons', icons, iconsHref)
+  .header__fullScreenMenu
+    a(href="#").fullScreenMenu-link
+      - for(var i=0;i<3;i++)
+        span.fullScreenMenu-link__item
+    .fullScreenMenu
+      - var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+      - var itemsHref = ["works.html", "about.html", "blog.html", "index.html"]
+      +menu('fullScreenMenu', items, itemsHref)
+  block arrow-down
+    .header__down
+      a(href="#").header__down-link
+        +icon('arrow_down','arrow_down-icon')
