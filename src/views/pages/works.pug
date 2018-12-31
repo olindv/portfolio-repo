@@ -21,18 +21,18 @@ block content
       svg(fill="#0c0f1e", opacity='0.85', viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
           polygon(points="0,150 900,150 900,0")
       .section__text.section__text--background
-        h2.section__title.section__title--underline Мои работы
+        h2.section__title.section__title--underline.section__title--padding-bottom Мои работы
   section.section.section-works
     //- .section__text.section__text--background
     //-   h2.section__title.section__title--underline Мои работы
     .slider
       a(href="#").slider__prev
         span.slider__prev-icon
-          +image('slides/slide2.png', 'Работа_2', 'img')
+          +image('slides/sl2.png', 'Работа_2', 'img')
         +icon('portf_arrow_down','portf_arrow_down-icon')
       a(href="#").slider__next
         span.slider__next-icon
-          +image('slides/slide3.png', 'Работа_3', 'img')
+          +image('slides/sl3.png', 'Работа_3', 'img')
         +icon('portf_arrow_up', 'portf_arrow_up-icon')
       ul.slider__list
         li.slider__item
@@ -47,7 +47,7 @@ block content
                 span.slider__info-text Посмотреть сайт
           .slider__column.slider__right
             .slider__pic
-              +image('slides/slide1.png', 'Работа_1', 'img')
+              +image('slides/sl1.png', 'Работа_1', 'img')
   section(style="background: url('./assets/images/bg.png') center bottom / cover no-repeat").section.section-about
     .container.container-about
       .section__text

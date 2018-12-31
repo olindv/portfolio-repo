@@ -7,5 +7,9 @@
   "light-grey": "#f0efe9",
   "test" : "#000",
   "light-blue" : "#0548be",
-  "blue" : "#083c96"
+  "blue" : "#083c96",
+
+  "monitor" : "1200px",
+  "tablets" : "768px",
+  "phones" : "480px"
 }

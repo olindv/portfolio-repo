@@ -1,9 +1,14 @@
 extends ../auth.layout.pug
 
 block content
-    .wrap(style="background:url('./assets/images/pic/bg-welcome.png') center center / cover no-repeat")
+    .parallax
+        .parallax__layer
+            video.parallax__video(src="./assets/images/video/night.mp4" autoplay loop)
+        .parallax__layer.parallax__layer--image(data-speed=`0.02`)
+            img.parallax__image(src="./assets/images/pic/layer_1.png", alt="mount")
+    .wrap
         .container.container-auth
-            .wrapper-auth
+            .wrapper__auth
                 .auth
                     .auth-front.auth__face
                         .info.info_auth
@@ -51,4 +56,7 @@ block content
                         +menu('menu', items, itemsHref)
             .wrapper-button
                 button.button.button__auth Авторизоваться
-            h2.footer__title.footer__title_auth &copy; Дмитрий Олин | создано с любовью в LoftSchool | 2018
+            div.footer__title.footer__title_auth 
+                span &copy; Дмитрий Олин 
+                span.footer__title-adaptive |
+                span  Cоздано с любовью в LoftSchool | 2018

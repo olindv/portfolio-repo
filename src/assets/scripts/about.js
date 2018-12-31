@@ -1,5 +1,8 @@
-import "./modules/example";
+import "./modules/skills";
 
+import hamburger from './modules/hamburger';
+
+hamburger().init();
 
 //Секция - яндекс карты
 

@@ -1,17 +1,43 @@
+.stuff {
+    position: relative;
+}
+
 .stuff__triangles{
     width: 100%;
     margin-top: -150px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
+
 }
+.stuff__triangles--margin {
+    margin-top: -307px;
+    @include tablets {
+        margin-top: -185px;
+    }
+    @include phones {
+        margin-top: -125px;
+    }
+}
+
+.stuff__triangles--position {
+    margin-top: 0;
+    position: absolute;
+    bottom: 100%;
+}
+
 .triangle{
     height: 150px;
     width: 50%;
+    @include monitor {
+        height: 120px;
+    }
+    @include tablets {
+        height: 90px;
+    }
+    @include phones {
+        height: 50px;
+    }
 }
 
 
-
-.stuff__triangles--margin {
-    margin-top: -307px;
-}

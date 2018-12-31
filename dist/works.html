@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>Portfolio | Мои работы</title>
-    <link rel="stylesheet" href="main.min.css"><script src="https://api-maps.yandex.ru/2.1/?apikey=b828d17e-e947-46ca-a671-edef4f2a975f&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="main.min.css">
   </head>
   <body>
     <div class="wrapper">
       <div class="maincontent">
-        <header class="header" style="background: url('./assets/images/pic/bg-welcome.png') center center / cover no-repeat">
-          <div class="info info_header">
-            <div class="info__photo"><img class="img img-circle" src="/assets/images/pic/IMG_1844.jpg" alt="Photo"/>
-            </div>
-            <div class="info__text">
-              <h1 class="info__title">Дмитрий Олин</h1>
-              <h2 class="info__desc">Личный сайт веб разработчика</h2>
+        <header class="header">
+          <div class="info info__header">
+            <div class="info__container">
+              <div class="info__photo"><img class="img img-circle" src="/assets/images/pic/IMG_1844.jpg" alt="Photo"/>
+              </div>
+              <div class="info__text">
+                <h1 class="info__title">Дмитрий Олин</h1>
+                <h2 class="info__desc">Личный сайт веб разработчика</h2>
+              </div>
             </div>
           </div>
           <div class="header__icons">
@@ -35,13 +37,13 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="header__fullScreenMenu"><a class="fullScreenMenu-link" href="#"><span class="fullScreenMenu-link__item"></span><span class="fullScreenMenu-link__item"></span><span class="fullScreenMenu-link__item"></span></a>
-            <div class="fullScreenMenu">
-              <ul class="fullScreenMenu__list">
-                <li class="fullScreenMenu__item"><a class="fullScreenMenu__link" href="works.html">Мои работы</a></li>
-                <li class="fullScreenMenu__item"><a class="fullScreenMenu__link" href="about.html">Обо мне</a></li>
-                <li class="fullScreenMenu__item"><a class="fullScreenMenu__link" href="blog.html">Блог</a></li>
-                <li class="fullScreenMenu__item"><a class="fullScreenMenu__link" href="index.html">Авторизация</a></li>
+          <div class="popup"><a class="popup__order" href="#"><span class="popup__order-item"></span><span class="popup__order-item"></span><span class="popup__order-item"></span></a>
+            <div class="popup__overlay">
+              <ul class="popup__list">
+                <li class="popup__item"><a class="popup__link" href="works.html">Мои работы</a></li>
+                <li class="popup__item"><a class="popup__link" href="about.html">Обо мне</a></li>
+                <li class="popup__item"><a class="popup__link" href="blog.html">Блог</a></li>
+                <li class="popup__item"><a class="popup__link" href="index.html">Авторизация</a></li>
               </ul>
             </div>
           </div>
@@ -59,15 +61,15 @@
               <polygon points="0,150 900,150 900,0"></polygon>
             </svg>
             <div class="section__text section__text--background">
-              <h2 class="section__title section__title--underline">Мои работы</h2>
+              <h2 class="section__title section__title--underline section__title--padding-bottom">Мои работы</h2>
             </div>
           </div>
         </section>
         <section class="section section-works">
-          <div class="slider"><a class="slider__prev" href="#"><span class="slider__prev-icon"><img class="img" src="/assets/images/slides/slide2.png" alt="Работа_2"/></span>
+          <div class="slider"><a class="slider__prev" href="#"><span class="slider__prev-icon"><img class="img" src="/assets/images/slides/sl2.png" alt="Работа_2"/></span>
               <svg class="portf_arrow_down-icon">
                 <use xlink:href="/assets/images/icons/sprite.svg#portf_arrow_down"></use>
-              </svg></a><a class="slider__next" href="#"><span class="slider__next-icon"><img class="img" src="/assets/images/slides/slide3.png" alt="Работа_3"/></span>
+              </svg></a><a class="slider__next" href="#"><span class="slider__next-icon"><img class="img" src="/assets/images/slides/sl3.png" alt="Работа_3"/></span>
               <svg class="portf_arrow_up-icon">
                 <use xlink:href="/assets/images/icons/sprite.svg#portf_arrow_up"></use>
               </svg></a>
@@ -85,7 +87,7 @@
                   </div>
                 </div>
                 <div class="slider__column slider__right">
-                  <div class="slider__pic"><img class="img" src="/assets/images/slides/slide1.png" alt="Работа_1"/>
+                  <div class="slider__pic"><img class="img" src="/assets/images/slides/sl1.png" alt="Работа_1"/>
                   </div>
                 </div>
               </li>
@@ -150,10 +152,10 @@
       </div>
       <footer class="footer">
         <div class="footer__main">
-          <div class="footer__column">
+          <div class="footer__column footer__column--left">
             <div class="footer__text">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</div>
           </div>
-          <div class="footer__column">
+          <div class="footer__column footer__column--midle">
             <ul class="menu-footer__list">
               <li class="menu-footer__item"><a class="menu-footer__link" href="works.html">Мои работы</a></li>
               <li class="menu-footer__item"><a class="menu-footer__link" href="about.html">Обо мне</a></li>
@@ -175,15 +177,41 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="footer__column">
+          <div class="footer__column footer__column--right">
             <div class="footer__text">Skype: navras88</div>
             <div class="footer__text">Mail: navras88@mail.ru</div>
             <div class="footer__text">Phone: +7 926 949 86 82</div>
             <div class="footer__text">Adress: Moscow</div>
           </div>
         </div>
-        <h2 class="footer__title">&copy; Дмитрий Олин | создано с любовью в LoftSchool | 2018</h2>
+        <div class="footer__title"> <span>&copy; Дмитрий Олин </span><span class="footer__title-adaptive">|</span><span> Cоздано с любовью в LoftSchool | 2018</span></div>
       </footer>
+      <script type="text/x-template" id="skills-list">
+        <ul class="skills-list">
+          <li class="skills-list__elem" v-for="skillsGroupObj in skills">
+            <skills-row :skillsGroupObj="skillsGroupObj"></skills-row>
+          </li>
+        </ul>
+      </script>
+      <script type="text/x-template" id="skills-item">
+        <div class="skills-row">
+          <div class="skills-list__title">{{skillsGroupObj.skillsGroup}}</div>
+          <ul class="skills">
+            <li class="skills-list__item" v-for="(skillPercentage, skillTitle) in skillsGroupObj.skills">
+              <skill :skillPercentage="skillPercentage" :skillTitle="skillTitle"></skill>
+            </li>
+          </ul>
+        </div>
+      </script>
+      <script type="text/x-template" id="skill">
+        <div class="skill">
+          <svg class="skill__figure" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <circle class="skill__circle skill__circle_under" cx="50" cy="50" r="40"></circle>
+            <circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
+          </svg>
+          <div class="skill__title">{{skillTitle}}</div>
+        </div>
+      </script>
     </div>
     <script src="bootloader.bundle.js"></script>
     <script src="vendor.bundle.js"></script>

@@ -1,22 +1,24 @@
-header(style="background: url('./assets/images/pic/bg-welcome.png') center center / cover no-repeat").header
-  .info.info_header
-    .info__photo
-      +image('pic/IMG_1844.jpg', 'Photo', 'img img-circle')
-    .info__text
-      h1.info__title Дмитрий Олин
-      h2.info__desc Личный сайт веб разработчика
+header.header
+  .info.info__header
+    .info__container
+      .info__photo
+        +image('pic/IMG_1844.jpg', 'Photo', 'img img-circle')
+      block text-blog
+        .info__text
+          h1.info__title Дмитрий Олин
+          h2.info__desc Личный сайт веб разработчика
   .header__icons
     - var icons = ["vk","github","in"]
     - var iconsHref = ["https://vk.com/id222946", "https://github.com/olindv", "#"]
     +listIcons('icons', icons, iconsHref)
-  .header__fullScreenMenu
-    a(href="#").fullScreenMenu-link
+  .popup
+    a(href="#").popup__order
       - for(var i=0;i<3;i++)
-        span.fullScreenMenu-link__item
-    .fullScreenMenu
+        span.popup__order-item
+    .popup__overlay
       - var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
       - var itemsHref = ["works.html", "about.html", "blog.html", "index.html"]
-      +menu('fullScreenMenu', items, itemsHref)
+      +menu('popup', items, itemsHref)
   block arrow-down
     .header__down
       a(href="#").header__down-link

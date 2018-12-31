@@ -13,8 +13,19 @@ module.exports = {
     }),
     require("postcss-advanced-variables")({
       variables: JSON.parse(
-        fs.readFileSync("./src/assets/styles/variables.json", "utf-8")
+        fs.readFileSync("./src/assets/styles/variables.json", "utf-8"),
       )
+    }),
+    require("postcss-pxtorem")({
+
+      rootValue: 16,
+      unitPrecision: 5,
+      propList: ['*'],
+      selectorBlackList: [/^html$/],
+      replace: true,
+      mediaQuery: false,
+      minPixelValue: 0
+
     }),
     require("postcss-nested"),
     require("postcss-rgb"),

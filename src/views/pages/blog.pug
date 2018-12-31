@@ -1,5 +1,15 @@
 extends ../main.layout.pug
 
+block text-blog
+    .info__text--blog
+        h1.info__title--blog БЛОГ
+        h2.info__desc--blog Статьи, которые я написал
+
+block arrow-down
+  .header__down.header__down--display-none
+    a(href="#").header__down-link
+      +icon('arrow_down','arrow_down-icon')
+
 block variables
   - var title = 'Блог'
 
@@ -8,7 +18,7 @@ block scripts
 
 block content
     section.stuff
-        .stuff__triangles
+        .stuff__triangles.stuff__triangles--position
             svg(fill="#fff", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
                 polygon(points="0,0 0,150 900,150")
             svg(fill="#fff", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
@@ -59,5 +69,7 @@ block content
                             .article__blog-content
                                 p.article__blog-text В большинстве случаев в процессе верстки сайта на чистом HTML разработчику будет не хватать его возможностей. Прежде всего давайте обратим внимание на то, что в Pug теги не закрываются — это осуществляется с помощью табуляции.
                                 p.article__blog-text В данном шаблонизаторе используется минимум уголков и скобочек. Это удобно и способствует ускорению работы верстальщика. Наследование шаблонов — это главная «плюшка» шаблонизаторов. Так же существует возможность создавать миксины. На чистом HTML нет ничего подобного. Просто пришлось бы монотонно дублировать код статьи, менять ей текст, и так далее, пока не заполнятся все статьи — получилось бы очень много кода, в котором легко потеряться.    
+
+                                
         
                 

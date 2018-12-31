@@ -1,28 +1,53 @@
 //Поднимаем стрелку
 
 .header__down--position-bottom{
-    bottom: 200px;
+    bottom: 250px;
+    @include tablets {
+        bottom: 150px;
+    }
+    @include phones {
+        bottom: 130px;
+    }
 }
 
+
 //**
+.section__title--padding-bottom {
+    @include tablets {
+        padding-bottom: 0;
+    }
+    // @include phones {
+    //     padding-bottom: 0;
+    // }
+}
+
 
 .section__text--background{
-    background: svg-load('stars2.svg', opacity='0.1', stroke='#fff', fill="transparent") center center no-repeat;
+    background: svg-load('stars2.svg') center center no-repeat;
     background-color: rgba(#0c0f1e, 0.85);
     background-size: 10%;
     padding: 65px 0 35px;
     flex-basis: 100%;
+    @include tablets {
+        padding: 30px 0;
+    }
+    @include phones {
+        padding: 20px 0;
+    }
 }
   
 .section-about{
     padding-bottom: 330px;
     .section__text{
-        background: svg-load('stars3.svg', opacity='0.1', stroke='#fff', fill="transparent") center center no-repeat;
+        background: svg-load('stars3.svg') center center no-repeat;
         padding: 65px 0 30px;
     }
     .section__title{
         padding-bottom: 35px;
         width: 400px;
+    }
+    @include phones {
+        padding-bottom: 400px;
     }
 }
   
@@ -167,6 +192,10 @@
 .slider__prev-icon, .slider__next-icon{
     display: inline-block;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .posts{
     margin-bottom: 65px;
@@ -175,7 +204,10 @@
 }
 .posts__list{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    @include phones {
+        flex-direction: column;
+    }
 }
 .posts__item{
     flex-basis: calc(100%/3);
@@ -183,6 +215,15 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    @include phones {
+        margin-bottom: 40px;
+        padding: 0 30px;
+        font-size: 14px;
+        line-height: 24px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 .posts__icon{
     width: 77px;
@@ -210,6 +251,9 @@
     left: 0;
     top: 45%;
     transform: translateY(-50%);
+    @include phones {
+        left: 7%;
+    }
 
 }
   
@@ -274,5 +318,8 @@
     position: absolute;
     left: 50%;
     top: 106%;
+    @include tablets {
+        top: 103%;
+    }
 }
   

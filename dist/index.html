@@ -2,15 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio | welcome page</title>
     <link rel="stylesheet" href="main.min.css">
   </head>
   <body>
-    <div class="wrap" style="background:url('./assets/images/pic/bg-welcome.png') center center / cover no-repeat">
+    <div class="parallax">
+      <div class="parallax__layer">
+        <video class="parallax__video" src="./assets/images/video/night.mp4" autoplay loop></video>
+      </div>
+      <div class="parallax__layer parallax__layer--image" data-speed="0.02"><img class="parallax__image" src="./assets/images/pic/layer_1.png" alt="mount"></div>
+    </div>
+    <div class="wrap">
       <div class="container container-auth">
-        <div class="wrapper-auth">
+        <div class="wrapper__auth">
           <div class="auth">
             <div class="auth-front auth__face">
               <div class="info info_auth">
@@ -92,7 +98,7 @@
         <div class="wrapper-button">
           <button class="button button__auth">Авторизоваться</button>
         </div>
-        <h2 class="footer__title footer__title_auth">&copy; Дмитрий Олин | создано с любовью в LoftSchool | 2018</h2>
+        <div class="footer__title footer__title_auth"> <span>&copy; Дмитрий Олин </span><span class="footer__title-adaptive">|</span><span> Cоздано с любовью в LoftSchool | 2018</span></div>
       </div>
     </div>
     <script src="auth.bundle.js"></script>
