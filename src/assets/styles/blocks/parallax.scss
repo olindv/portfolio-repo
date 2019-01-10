@@ -1,0 +1,94 @@
+//parallax auth - js
+
+.parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include tablets {
+        display: none;
+    }
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 65%;
+}
+.parallax__video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // width: 100%;
+}
+
+.parallax__pro {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+//parallax another pages - css
+
+.header__parallax {
+    // background: url('./assets/images/pic/fon.png') center center / cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // width: 100%;
+    // height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 100px;
+}
+
+.header__parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // width: 100%;
+    // height: 100%;
+}
+
+.header__parallax-layer--sky {
+    transform: translateZ(-300px) scale(4);
+}
+
+.header__parallax-layer--mount {
+    transform: translateZ(0px) scale(1);
+}
+
+.header__parallax-image {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    will-change: transform;
+    // height: 55%;
+    width: 100%;
+}
+
+.header__parallax-image--sky {
+    height: 100%;
+    // width: 100%;
+}

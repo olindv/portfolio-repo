@@ -11,6 +11,10 @@
     <div class="wrapper">
       <div class="maincontent">
         <header class="header">
+          <div class="header__parallax">
+            <div class="header__parallax-layer header__parallax-layer--sky"><img class="header__parallax-image header__parallax-image--sky" src="./assets/images/pic/fon.png" alt="sky"></div>
+            <div class="header__parallax-layer header__parallax-layer--mount"><img class="header__parallax-image" src="./assets/images/pic/layer_1.png" alt="mount"></div>
+          </div>
           <div class="info info__header">
             <div class="info__container">
               <div class="info__photo"><img class="img img-circle" src="/assets/images/pic/IMG_1844.jpg" alt="Photo"/>
@@ -237,6 +241,43 @@
             <circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
           </svg>
           <div class="skill__title">{{skillTitle}}</div>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-root">
+        <div class="slider">
+          <info :work="currentWork"></info>
+          <display :work="currentWork"></display>
+          <btns :works="works" :index="currentIndex" @slide="handleSlide"></btns>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-info">
+        <div class="slider__info-container">
+          <div class="slider__info">
+            <div class="slider__info-title">
+              <div class="subtitle">{{work.title}}</div>
+              <div class="slider__info-skills">{{work.skills}}</div><a class="button button_slider" :href="work.link" target="_blank"><span class="slider__info-icon">
+                  <svg class="link-icon">
+                    <use xlink:href="/assets/images/icons/sprite.svg#link"></use>
+                  </svg></span><span class="slider__info-text">Посмотреть сайт</span></a>
+            </div>
+          </div>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-display">
+        <div class="slider__display"><img class="slider__big-pic" :src="work.photo" alt=""></div>
+      </script>
+      <script type="text/x-template" id="slider-btns">
+        <div class="slider__buttons">
+          <div class="slider__button" @click="slide('prev')">
+            <div class="slider__button-container">
+              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
+            </div>
+          </div>
+          <div class="slider__button slider__button_next" @click="slide('next')">
+            <div class="slider__button-container">
+              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
+            </div>
+          </div>
         </div>
       </script>
     </div>

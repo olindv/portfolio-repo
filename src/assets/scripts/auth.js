@@ -1,6 +1,6 @@
 // Флип-меню
 
-import authDone from './modules/auth'; 
+import authDone from './modules/flip'; 
 
 authDone().init();
 
@@ -12,6 +12,9 @@ authDone().init();
 const layer = document.querySelector('.parallax__layer--image');
 
 const moveLayers = e => {
+  if(window.innerWidth < 769) {
+    return
+  }
   const initialX = (window.innerWidth / 2) - e.pageX;
   const initialY = (window.innerHeight / 2) - e.pageY;
 
