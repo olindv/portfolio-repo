@@ -1,0 +1,65 @@
+.form__btns{
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    position: absolute;
+    top: 129%;
+    @include tablets {
+        top: 137%;
+    }
+    @include phones {
+        top: 142%;
+    }
+}
+.form__btn{
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: rgba($grey,0.5);
+    }
+    font-size: 16px;
+    @include tablets{
+      font-size: 14px;
+    }
+    font-weight: 500;
+    color: #fff;
+    background-color: rgba($light-blue,0.85);
+    &:hover{
+      background-color: rgba($blue,0.85);
+    }
+    &:active{
+      background-color: rgba($blue,1);
+    }
+    display: block;
+    padding: 12px 0;
+    &:last-child{
+      &:before{
+        content: none;
+      }
+    }
+}
+
+.form__btns--work {
+    position: static;
+
+}
+
+.form__btn--before {
+    &::before{
+        display: none;
+    }
+}
+
+.form__reset {
+    background-color: transparent;
+    &:hover {
+        background-color: transparent;
+    }
+}

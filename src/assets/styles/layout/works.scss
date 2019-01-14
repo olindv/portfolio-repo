@@ -23,9 +23,9 @@
 
 
 .section__text--background{
-    background: svg-load('stars2.svg') center center no-repeat;
+    background: url('./assets/images/pic/stars2.png') center center no-repeat;
     background-color: rgba(#0c0f1e, 0.85);
-    background-size: 10%;
+    background-size: contain;
     padding: 65px 0 35px;
     flex-basis: 100%;
     @include tablets {
@@ -39,18 +39,25 @@
 .section-about{
     padding-bottom: 330px;
     .section__text{
-        background: svg-load('stars3.svg') center center no-repeat;
+        background: url('./assets/images/pic/stars3.png') center center no-repeat;
+        background-size: contain;
         padding: 65px 0 30px;
     }
     .section__title{
         padding-bottom: 35px;
         width: 400px;
+        &--font-size {
+            font-size: 62.792px;
+        }
     }
     @include phones {
         padding-bottom: 400px;
     }
 }
   
+.countainer-about {
+    padding-top: 30px;
+}
 
 .posts{
     margin-bottom: 65px;
@@ -130,7 +137,9 @@
     display: flex;
     justify-content: center;
     .form{
-      padding: 30px 20px 20px;
+        .form__contain{
+            padding: 30px 20px 20px;
+        }
     }
     .form__input{
       padding-left: 20px;
@@ -168,6 +177,24 @@
     background-color: rgba(255, 255, 255, 0.071);
     color: #fff;
 }
+
+// .form__btns--work {
+//     position: static;
+
+// }
+
+// .form__btn--before {
+//     &::before{
+//         display: none;
+//     }
+// }
+
+// .form__reset {
+//     background-color: transparent;
+//     &:hover {
+//         background-color: transparent;
+//     }
+// }
 
 .arrow__up{
     position: absolute;

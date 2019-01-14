@@ -30,32 +30,38 @@ block content
                             .section__text
                                 h2.section__title.section__title--underline Авторизуйтесь
                             .auth-back__form
-                                form.form(action="")
-                                    .form__row
-                                        .form__input-icon
-                                            +icon('login', 'login-icon')
-                                        input(type="text", placeholder="Логин").form__input
-                                    .form__row
-                                        .form__input-icon
-                                            +icon('password', 'password-icon')
-                                        input(type="text", placeholder="Пароль").form__input
-                                    label.form__label.form__label_checkbox
-                                        input(type="checkbox").form__checkbox
-                                        .form__checkbox-fake
-                                        span.form__checkbox-text Я человек
-                                    .form__question Вы точно не робот?
-                                    .form__answer
-                                        label.form__label.form__label_first
-                                            input(type="radio", name="robot").form__radio
-                                            .form__radio-fake
-                                            span.form__radio-text Да
-                                        label.form__label.form__label_first
-                                            input(type="radio", name="robot").form__radio
-                                            .form__radio-fake
-                                            span.form__radio-text Не уверен
-                        - items = ["На главную", "Войти"]
-                        - itemsHref = ["#", "#"]
-                        +menu('menu', items, itemsHref)
+                                form.form
+                                    .form__contain
+                                        .form__row
+                                            label(for="login").label__show
+                                            input(type="text", placeholder="Логин" name="login").form__input
+                                            .form__input-icon
+                                                +icon('login', 'login-icon')
+                                        .form__row
+                                            label(for="password").label__show
+                                            input(type="text", placeholder="Пароль" name="password").form__input
+                                            .form__input-icon
+                                                +icon('password', 'password-icon')
+                                        label.form__label.form__label_checkbox
+                                            input(type="checkbox" name="check").form__checkbox
+                                            .form__checkbox-fake
+                                            span.form__checkbox-text Я человек
+                                        .form__question Вы точно не робот?
+                                        .form__answer
+                                            label.form__label.form__label_first
+                                                input(type="radio", name="robot").form__radio
+                                                .form__radio-fake
+                                                span.form__radio-text Да
+                                            label.form__label.form__label_first
+                                                input(type="radio", name="robot").form__radio
+                                                .form__radio-fake
+                                                span.form__radio-text Не уверен
+                                    .form__btns
+                                        a(href="./index.html").form__btn На главную
+                                        button(type="submit").form__btn.form__submit Войти
+                        //- - items = ["На главную", "Войти"]
+                        //- - itemsHref = ["#", "#"]
+                        //- +menu('menu', items, itemsHref)
             .wrapper-button
                 button.button.button__auth Авторизоваться
             div.footer__title.footer__title_auth 

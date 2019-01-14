@@ -33,6 +33,18 @@
     width: 57%;
 }
 
+.aside__menu--relative {
+    position: relative;
+}
+
+.aside__menu--fixed {
+    position: fixed;
+    top: 2%;
+    left: 7%;
+    width: 17%;
+    transform: translateX(-2%);
+}
+
 .aside__menu-item {
     padding-right: 10px;
     margin-bottom: 20px;

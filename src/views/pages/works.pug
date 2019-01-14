@@ -52,7 +52,7 @@ block content
   section(style="background: url('./assets/images/bg.png') center bottom / cover no-repeat").section.section-about
     .container.container-about
       .section__text
-        h2.section__title.section__title--underline Что обо мне говорят
+        h2.section__title.section__title--underline.section__title--font-size Что обо мне говорят
       .posts
         ul.posts__list
           - var alts = ['Ковальчук Дмитрий', 'Сабанцев Владимир'];
@@ -71,16 +71,21 @@ block content
       .section-about__form         
         .form-wrapper
           form.form
-            .form__text
-              h2.section__title Связаться со мной
-            .form__row
-              input(type="text", placeholder="Имя").form__input
-            .form__row
-              input(type="text", placeholder="Email").form__input
-            textarea(name="", rows="7", placeholder="Ваше сообщение").form__textarea
-          - items = ["Отправить", "Очистить"]
-          - itemsHref = ["#", "#"]
-          +menu('menu', items, itemsHref)
+            .form__contain
+              .form__text
+                h2.section__title Связаться со мной
+              .form__row
+                input(type="text", placeholder="Имя", name="name").form__input
+              .form__row
+                input(type="text", placeholder="Email", name="email").form__input
+              .form__row
+                textarea(name="message", rows="7", placeholder="Ваше сообщение").form__textarea
+            .form__btns.form__btns--work
+              button(type="submit").form__btn.form__submit.form__btn--before Отправить
+              button(type="reset").form__btn.form__reset Очистить
+          //- - items = ["Отправить", "Очистить"]
+          //- - itemsHref = ["#", "#"]
+          //- +menu('menu', items, itemsHref)
       .arrow__up
         a(href="#").arrow__up-link
           +icon('portf_arrow_up','arrow__up-icon')

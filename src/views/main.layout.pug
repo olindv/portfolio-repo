@@ -10,9 +10,15 @@ html(lang="ru")
 
     title Portfolio | #{title}
     link(rel='stylesheet' href='main.min.css')
+    include ./common/preloader.pug
     block maps
       
   body
+    .preloader
+      svg(viewBox="0 0 52.586 63.73" preserveAspectRation="none").preloader__icon
+        circle(cx="26.293" cy="37.438" r="25").preloader__circle
+        circle(cx="2" cy="2" r="4.5").preloader__ring
+      span.preloader__text 0
     .wrapper
       .maincontent
         include ./common/header.pug
@@ -22,6 +28,6 @@ html(lang="ru")
       include ./components/entry.pug
 
 
-    script(src='bootloader.bundle.js')
-    script(src='vendor.bundle.js')
+    //- script(src='bootloader.bundle.js')
+    //- script(src='vendor.bundle.js')
     block scripts
