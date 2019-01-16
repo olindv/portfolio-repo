@@ -2,6 +2,7 @@
 export default function authDone() {
     const buttonAuth = document.querySelector('.button__auth');
     const auth = document.querySelector('.auth');
+    const buttonMain = document.querySelector('.form__btn--main');
   
     function flippedMenu(){
       buttonAuth.addEventListener('click', function(e){
@@ -14,6 +15,11 @@ export default function authDone() {
           auth.classList.remove('is-flipped');
           buttonAuth.classList.remove('button__auth--visibility-hidden');
         }
+      })
+      buttonMain.addEventListener('click', function(e) {
+        e.preventDefault();
+        auth.classList.remove('is-flipped');
+        buttonAuth.classList.remove('button__auth--visibility-hidden');
       })
     }
   

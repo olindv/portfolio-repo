@@ -193,7 +193,6 @@
 .button_slider{
     display: flex;
     position: relative;
-    // border: 1px solid transparent;
     color: #fff;
     background-color: $light-blue;
     padding: 15px 20px !important;
@@ -219,4 +218,38 @@
     @include phones {
         font-size: 14px;
     }
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 1s;
+}
+.slide-down-leave {
+  bottom: 0;
+}
+.slide-down-leave-to {
+  bottom: -100%;
+}
+.slide-down-enter {
+  bottom: 100%;
+}
+.slide-down-enter-to {
+  bottom: 0%;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 1s;
+}
+.slide-up-leave {
+  bottom: 0;
+}
+.slide-up-leave-to {
+  bottom: 100%;
+}
+.slide-up-enter {
+  bottom: -100%;
+}
+.slide-up-enter-to {
+  bottom: 0;
 }

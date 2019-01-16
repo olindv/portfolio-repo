@@ -6,8 +6,10 @@ hamburger().init();
 
 //Секция - яндекс карты
 
+// eslint-disable-next-line no-undef
 ymaps.ready(init);
 function init() {
+    // eslint-disable-next-line no-undef
     var myMap = new ymaps.Map('map', {
         center: [55.76, 37.64],
         zoom: 10
@@ -18,6 +20,7 @@ function init() {
 
     for (var i = 0; i<coords.length; i++) {
         
+        // eslint-disable-next-line no-undef
         var myPlacemarkWithContent = new ymaps.Placemark(coords[i], {
             hintContent: 'Здесь проживает Sponge Bob!',
             balloonContent: 'Квадратные штаны !',

@@ -241,17 +241,19 @@
         </div>
       </script>
       <script type="text/x-template" id="slider-info">
-        <div class="slider__info-container">
-          <div class="slider__info">
-            <div class="slider__info-title">
-              <div class="subtitle">{{work.title}}</div>
-              <div class="slider__info-skills">{{work.skills}}</div><a class="button button_slider" :href="work.link" target="_blank"><span class="slider__info-icon">
-                  <svg class="link-icon">
-                    <use xlink:href="/assets/images/icons/sprite.svg#link"></use>
-                  </svg></span><span class="slider__info-text">Посмотреть сайт</span></a>
+        <transition name="change">
+          <div class="slider__info-container">
+            <div class="slider__info">
+              <div class="slider__info-title">
+                <div class="subtitle">{{work.title}}</div>
+                <div class="slider__info-skills">{{work.skills}}</div><a class="button button_slider" :href="work.link" target="_blank"><span class="slider__info-icon">
+                    <svg class="link-icon">
+                      <use xlink:href="/assets/images/icons/sprite.svg#link"></use>
+                    </svg></span><span class="slider__info-text">Посмотреть сайт</span></a>
+              </div>
             </div>
           </div>
-        </div>
+        </transition>
       </script>
       <script type="text/x-template" id="slider-display">
         <div class="slider__display"><img class="slider__big-pic" :src="work.photo" alt=""></div>
@@ -259,14 +261,18 @@
       <script type="text/x-template" id="slider-btns">
         <div class="slider__buttons">
           <div class="slider__button" @click="slide('prev')">
-            <div class="slider__button-container">
-              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
-            </div>
+            <transition-group name="slide-up" tag="div">
+              <div class="slider__button-container" key="button1">
+                <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
+              </div>
+            </transition-group>
           </div>
           <div class="slider__button slider__button_next" @click="slide('next')">
-            <div class="slider__button-container">
-              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
-            </div>
+            <transition-group name="slide-down" tag="div">
+              <div class="slider__button-container" key="button2">
+                <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
+              </div>
+            </transition-group>
           </div>
         </div>
       </script>
