@@ -32,14 +32,12 @@ script(type="text/x-template")#slider-display
 script(type="text/x-template")#slider-btns
     div.slider__buttons
         div.slider__button(@click="slide('prev')")
-            transition-group(name="slide-up" tag="div")
-                div.slider__button-container(key="button1")
-                    div.slider__button-img-wrap
-                        img(:src="prevButtonWorks[index].photo", alt="").slider__button-pic
+            transition-group(name="slide-down" tag="div").slider__button-container
+                .slider__button-img-wrap(:key="prevButtonWorks[index].photo")
+                    img(:src="prevButtonWorks[index].photo", alt="").slider__button-pic
         div.slider__button.slider__button_next(@click="slide('next')")
-            transition-group(name="slide-down" tag="div")
-                div.slider__button-container(key="button2")
-                    div.slider__button-img-wrap()
-                        img(:src="nextButtonWorks[index].photo", alt="").slider__button-pic
+            transition-group(name="slide-up" tag="div").slider__button-container
+                .slider__button-img-wrap(:key="nextButtonWorks[index].photo")
+                    img(:src="nextButtonWorks[index].photo", alt="").slider__button-pic
 
 

@@ -4,19 +4,6 @@ import authDone from './modules/flip';
 
 authDone().init();
 
-// валидация формы
-
-import validation from './modules/validation';
-
-const form = document.querySelector('.form');
-const formButton = document.querySelector('.form__submit');
-form.onsubmit = function(e){
-  e.preventDefault();
-}
-formButton.addEventListener('click', function(){
-  validation().init(form);
-})
-
 // Параллакс
 
 
@@ -41,3 +28,47 @@ const moveLayers = e => {
 };
 
 window.addEventListener('mousemove', moveLayers)
+
+// валидация формы
+
+import validation from './modules/validation';
+
+const form = document.querySelector('.form');
+const formButton = document.querySelector('.form__submit');
+
+ 
+form.onsubmit = function(e){
+  e.preventDefault();
+  let form = e.target;
+  let formData = new FormData();
+  formData.append('name', form.elements.login.value);
+  formData.append('password', form.elements.password.value);
+
+  let sendAjax = function (url, data) {
+    return new Promise(function(resolve){
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.responseType= 'json';
+      xhr.setRequestHeader('X-Requesteed-With', 'XMLHttpRequest');
+      xhr.addEventListener('load', ()=>{
+        resolve(xhr.response);
+      })
+      xhr.send(data);
+    })
+  }
+
+  sendAjax('https://webdev-api.loftschool.com/login', formData)
+  .then(function(response){
+    localStorage.setItem('token', response.token);
+    document.location.replace("https://olindv.github.io/admin"); 
+    // document.location.replace("http://localhost:8080/admin"); 
+  })
+
+};
+
+formButton.addEventListener('click', function(){
+  validation().init(form);
+});
+
+
+

@@ -1,4 +1,4 @@
-const fs = require('fs');
+
 const webdriverio = require('webdriverio');
 const option = require('../wdio.conf');
 const client = webdriverio.multiremote(option);

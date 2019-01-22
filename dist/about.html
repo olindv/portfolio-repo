@@ -313,17 +313,13 @@
       <script type="text/x-template" id="slider-btns">
         <div class="slider__buttons">
           <div class="slider__button" @click="slide('prev')">
-            <transition-group name="slide-up" tag="div">
-              <div class="slider__button-container" key="button1">
-                <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
-              </div>
+            <transition-group class="slider__button-container" name="slide-down" tag="div">
+              <div class="slider__button-img-wrap" :key="prevButtonWorks[index].photo"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
             </transition-group>
           </div>
           <div class="slider__button slider__button_next" @click="slide('next')">
-            <transition-group name="slide-down" tag="div">
-              <div class="slider__button-container" key="button2">
-                <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
-              </div>
+            <transition-group class="slider__button-container" name="slide-up" tag="div">
+              <div class="slider__button-img-wrap" :key="nextButtonWorks[index].photo"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
             </transition-group>
           </div>
         </div>
