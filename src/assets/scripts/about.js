@@ -1,8 +1,13 @@
-import "./modules/skills";
+// import "./modules/skills";
 
+import skills from './modules/skills'
 import hamburger from './modules/hamburger';
 
 hamburger().init();
+
+setTimeout(function(){
+    skills().init();
+},2000)
 
 //Секция - яндекс карты
 

@@ -28,7 +28,10 @@ export default {
   },
   destroyed(){
     this.active.activeClass = false;
-  }
+  },
+  // beforeCreate(to,from,next) {
+  //   next();
+  // }
 };
 </script>
 

@@ -1,15 +1,15 @@
-import "./modules/slider";
-
-
+// import "./modules/slider";
 import hamburger from './modules/hamburger';
+import validation from './modules/validation';
+import slider from "./modules/slider";
 
 
 hamburger().init();
+slider().init();
 
 
 // валидация формы
 
-import validation from './modules/validation';
 
 const form = document.querySelector('.form');
 const formButton = document.querySelector('.form__submit');
@@ -19,3 +19,5 @@ form.onsubmit = function(e){
 formButton.addEventListener('click', function(){
   validation().init(form);
 })
+
+

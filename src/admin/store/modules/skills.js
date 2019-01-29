@@ -89,7 +89,7 @@ const skills = {
     },
     updateSkill(state, data){
       state.skillsData.forEach(function(item){
-        item.skills.forEach(function(skill/**, index, item*/){
+        item.skills.forEach(function(skill){
           if(skill.id === data.id){
             skill.percents = data.percents;
           }

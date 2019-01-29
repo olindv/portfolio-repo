@@ -49,19 +49,6 @@ const works = {
   },
   actions: {
     getWorksData(context, userId){
-      let receiveDataAjax = function(url){
-        return new Promise(function(resolve){
-          let xhr = new XMLHttpRequest();
-          xhr.open('GET', url);
-          xhr.responseType = 'json';
-          xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-          xhr.addEventListener('load', ()=>{
-              resolve(xhr.response);
-          })
-          xhr.send();
-        })
-      }
-
       receiveDataAjax(`https://webdev-api.loftschool.com/works/${userId}`)
       .then(function(response){
         context.commit('updateWorksData', response); 
