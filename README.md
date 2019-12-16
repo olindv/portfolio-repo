@@ -1,4 +1,4 @@
-# Проекта Portfolio
+# Проект Portfolio
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/)
 
